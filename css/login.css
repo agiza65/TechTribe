@@ -1,0 +1,330 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #AAE1DE; /* Light teal background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Container */
+.login-container {
+    background: #FFFFFF; /* White box for the form */
+    width: 400px; /* Adjust based on your preference */
+    padding: 40px;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25); /* Subtle shadow */
+    text-align: center; /* Center all text */
+    position: relative;
+}
+
+/* Logo Styling */
+.login-logo img {
+    width: 120px; /* Logo size */
+    margin-bottom: 20px;
+}
+
+/* Welcome Title */
+h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #374A49; /* Dark grayish-green */
+    margin-bottom: 30px;
+}
+
+.toggle {
+    position: absolute;
+    right: 18px;
+    top: 67%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background: url(../images/show.png) no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 2;
+}
+.toggle.hide{
+    background: url(../images/hide.png) no-repeat center;
+    background-size: cover;
+}
+
+/* Toggle Container */
+.toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 330px;
+    height: 50px;
+    background: #F0FDFF; /* Light background */
+    border-radius: 33px;
+    margin: 0 auto 30px; /* Center and add bottom margin */
+    position: relative; /* To position the sliding button */
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+/* Sliding Button */
+.slider-btn {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #AAE1DE; /* Teal color for active section */
+    border-radius: 33px;
+    transition: all 0.3s ease; /* Smooth sliding animation */
+    z-index: 1; /* Place behind text */
+}
+
+/* Button Text */
+.toggle-option {
+    position: relative;
+    z-index: 2; /* Place above the slider */
+    width: 50%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #819E9D; /* Inactive text color */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Active Text */
+.toggle-option.active {
+    color: #FFFFFF; /* Active text is white */
+    font-weight: 500;
+}
+
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left; /* Align labels to the left */
+    position: relative;
+}
+
+.input-group.password {
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000; /* Black text */
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #97BEBC; /* Light border */
+    border-radius: 40px; /* Rounded input fields */
+    color: black; /* Placeholder text color */
+    padding-right: 45px;
+}
+
+.input-field:focus {
+    border-color: #80ADAB; /* Focus color */
+    outline: none; /* Remove default outline */
+}
+
+/* Remember Me & Forgot Password */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.options label {
+    cursor: pointer;
+}
+
+.options a {
+    text-decoration: none;
+    color: #80ADAB; /* Link color */
+    transition: color 0.3s ease;
+}
+
+.options a:hover {
+    color: #005f8b; /* Darker teal on hover */
+}
+
+/* Login Button */
+.login-btn {
+    background: #AAE1DE; /* Button background color */
+    color: #FFFFFF; /* White text */
+    font-size: 16px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 40px; /* Rounded button */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition */
+    width: 100%; /* Full-width button */
+}
+
+.login-btn:hover {
+    background: #87CFD1; /* Slightly darker teal */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.input-pswd {
+    position: relative;
+}
+
+.pswd {
+    display: flex;
+    align-items: center;
+}
+
+.pswd-strength .password-strength-meter {
+    margin-top: 8px;
+    margin-bottom: 3px;
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.pswd-strength .strength-text {
+    font-size: 12px;
+    min-height: 14px;
+    transition: all 0.3s ease;
+    text-align: left;
+    margin-left: 8px;
+}
+
+/* Password strength colors */
+.strength-1 { 
+    width: 20%; 
+    background-color: #ff4d4d !important; /* Very Weak - Red */
+}
+.strength-2 { 
+    width: 40%; 
+    background-color: #ffa64d !important; /* Weak - Orange */
+}
+.strength-3 { 
+    width: 60%; 
+    background-color: #ffff4d !important; /* Medium - Yellow */
+}
+.strength-4 { 
+    width: 80%; 
+    background-color: #4dff4d !important; /* Strong - Light Green */
+}
+.strength-5 { 
+    width: 100%; 
+    background-color: #00cc00 !important; /* Very Strong - Dark Green */
+}
+
+.text-1 { color: #ff4d4d; }
+.text-2 { color: #ffa64d; }
+.text-3 { color: #999900; }
+.text-4 { color: #4dff4d; }
+.text-5 { color: #00cc00; }
+
+.password-guidance {
+    display: inline-block;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.material-icons {
+    position: absolute;
+    top: 1%;
+    transform: translateY(-10%);
+    font-size: 18px;
+}
+
+.guidance-tooltip {
+    display: none;
+    position: absolute;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 250px;
+    z-index: 100;
+    font-size: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-top: 5px;
+}
+
+.guidance-tooltip ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 5px 0;
+}
+
+.guidance-tooltip li {
+    margin: 5px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.guidance-tooltip li:before {
+    content: "•";
+    position: absolute;
+    left: 5px;
+}
+
+.login-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.profile-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+}
+
+.profile-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.file-upload-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.file-upload-wrapper input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.file-upload-wrapper .file-upload-button {
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
